@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="16.html">go to 16</a><br/>
+    <button onclick="goBack()">go backwards</button>
+    <button onclick="goForward()">go forward</button><br/>
+    <button onclick="goBack2()">go backward--2nd way</button>
+    <script>
+        let goBack = function(){
+            history.back();
+        }
+
+        let goForward = function(){
+            history.forward();
+        }
+        let goBack2 = function(){
+            history.go(-1);
+        }
+
+
+    </script>
+</body>
+</html>

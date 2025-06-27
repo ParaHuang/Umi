@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    account:<input id="account"/><br/>
+    password:<input id="password"/><br/>
+    confirm password:<input id="password2"/><br/>
+    name:<input id="name"/><br/>
+    <button onclick="register()">register</button>
+    <!-- <button onclick="fun()">click me</button> -->
+    <script>
+
+        function register(){
+            let account = document.getElementById("account").value;
+            let password = document.getElementById("password").value;
+            let password2 = document.getElementById("password2").value;
+            let name = document.getElementById("name").value;
+            //account can't be empty
+            if(account == ""){
+                alert("account can't be empty");
+                return;
+            }
+
+            //password can't be empty
+            if(password == ""){
+                alert("password can't be empty");
+                return;
+            }
+
+            //password has to be the same as confrim password
+            if(password != password2){
+                alert("password has to be the same as confrim password");
+                return;
+            }
+
+            //name can't be empty
+            if(name == ""){
+                alert("name can't be empty");
+                return;
+            }
+
+
+            alert("register successfully");
+        }
+
+
+
+        function fun(){
+            for(let i=1 ; i<=5 ; i++){
+                if(i==3){
+                    //break;      //end the loop outside
+                    //continue;       //skip the rest code of current round loop, directly start the next round
+                    return;     //end the program
+                }
+                console.log(i);
+            }
+
+            console.log("the end");
+        }
+        
+
+    </script>
+</body>
+</html>

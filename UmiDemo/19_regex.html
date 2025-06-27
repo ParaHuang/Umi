@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+         span{
+            color: red;
+            display: none;
+        } 
+    </style>
+</head>
+
+<body>
+    <h1>Willkommen</h1>
+    <form action="16.html">
+        <label for="account">Account:</label>
+        <input type="text" id="account" name="name" />
+        <span id="tip1">account needs at least 6 characters, the first character has to be capital</span>
+        <br />
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password"/>
+        <br />
+        <label for="confirmpassword">ConfirmPassword:</label>
+        <input type="password" id="confirmpassword" />
+        <br />
+
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone"/>
+        <br />
+
+        <label for="birthday">Birthday:</label>
+        <input type="date" id="birthday" name="birthday" />
+        <br />
+
+        <label for="id">ID</label>
+        <input type="text" id="id" name="id"/>
+        <br />
+
+        <label>Gender:</label>
+        <input type="radio" id="male" name="gender" value="male" checked/>
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="female" />
+        <label for="female">Female</label>
+        <br />
+
+        <label for="city">City:</label>
+        <select id="city" name="city" required>
+            <option value="bern">Bern</option>
+            <option value="zurich">Zürich</option>
+            <option value="basel">Basel</option>
+        </select>
+        <br />
+
+        <button type="submit" onclick="return check()">Absenden</button>
+    </form>
+</body>
+<script>
+    let check = function(){
+        let account = document.getElementById("account").value;
+        let regex1 = /^[A-Z]\w{5,}$/;
+        if(!regex1.test(account)){
+            // alert("account needs at least 6 characters, the first character has to be capital");
+            document.getElementById("tip1").style.display = "inline";
+            return false;   //false is a signal to stop default action
+        }
+
+        let password = document.getElementById("password").value;
+        let regex2 = /^\d{8,}$/;
+        if(!regex2.test(password)){
+            alert("password needs at least 8 numbers");
+            return false;   //false is a signal to stop default action
+        }
+
+        let confirmpassword = document.getElementById("confirmpassword").value;
+        if(password != confirmpassword){
+            alert("two passwords need be the same");
+            return false;  
+        }
+
+    }
+</script>
+
+</html>

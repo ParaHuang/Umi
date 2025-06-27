@@ -1,0 +1,57 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+#box{
+    width: 780px;
+    background: pink;
+    margin: 0 auto;
+}
+/*
+3 types of element( display )
+1.inline: a.   doesn't change the line, share the row space with others     b. width and height have no effect on this
+2.block:  use a whole row
+3.inline-block :   a. share the row space with others      b.width and height would work
+
+to make 2 block element shows in the same row
+1.   display:block     ->   display:inline-block                (for some block)
+2.   float: left/right
+*/
+
+#left{
+    width: 400px;
+    height: 600px;
+    background-color: red;
+    float: left;
+    /* display: inline-block; */
+}
+#right{
+    width: 300px;
+    height: 600px;
+    background-color: yellow;
+    float: left;
+    /* display: inline-block; */
+}
+#d1{
+    width: 100px;
+    height: 100px;
+    background: blue;
+}
+
+#myPic{
+    height: 100px;
+    width: 600px;
+    background: url(../img/header.jpg);
+    background-size: 100% 100%;
+}
+
+#s1{
+    height: 100px;
+    width: 600px;
+    background-color: aqua;
+    display: inline-block;
+}
+
+.clear{
+    clear: both;            /*cancel floating , meanwhile keep the look when they float*/
+}

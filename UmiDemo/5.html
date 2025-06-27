@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="box1" /> <br/>
+    <button onclick="show()">show the content of input box with a dialog</button><br/>
+
+    <input id="box2" placeholder="enter a color"/> <br/>
+    <button >set up the background color</button>
+
+    <!-- <img id="pic" src="img/header.jpg"/> -->
+
+
+    <script>
+        function show(){
+            //alert("abcde");
+            //1.find input box          var->variable
+            let box = document.getElementById("box1");
+
+            //2.find the content inside of input box
+            //.  ->  of
+            alert(box.value)
+
+            // document.getElementById("pic");
+            console.log(box)
+        }
+
+        //show();
+    </script>
+</body>
+</html>

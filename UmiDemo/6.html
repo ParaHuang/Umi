@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculation</title>
+</head>
+<body>
+    <div>
+        <input id="firstNumber" placeholder="First Number"/>
+    </div>
+    <div>
+        <input id='secondNumber' placeholder="Second Number"/>
+    </div>
+    <div>
+        <button onclick='calc("+")'>+</button>
+        <button onclick="calc('-')">-</button>
+        <button onclick="calc('*')">*</button>
+        <button onclick="calc('/')">/</button>
+    </div>
+    <div>
+        <input id="result"/>
+    </div>
+
+<script>
+
+    function calc(symbol) {
+        let firstNumber = parseInt(document.getElementById("firstNumber").value);
+        let secondNumber = parseInt(document.getElementById("secondNumber").value);
+        // "12+2"   -> 
+        let result = eval(firstNumber + symbol + secondNumber);
+        // if(symbol == "+"){      //= : assign a value to the variable on the left side    ==: compare two value, see if they equal as each other
+        //     result = parseInt(firstNumber)+parseInt(secondNumber);      //+: 2numbers, math addition   , at least 1 string, concat
+        // }else if(symbol=="-"){
+        //     result = firstNumber-secondNumber;
+        // }else if(symbol=="*"){
+        //     result = firstNumber*secondNumber;
+        // }else{
+        //     result = firstNumber/secondNumber;
+        // }
+        document.getElementById("result").value = result;
+
+        //flow control
+        //+ -> num1+num2
+        //- -> num1-num2
+        
+        /*
+        //if..else...
+        if(expression){
+            operationA
+        }else{
+            operationB
+        }
+        //when the result of expression is correct, then do the operationA
+        //otherwise do the operationB
+
+        if(expression1){
+            operationA
+        }else if(expression2){
+            operationB
+        }else if(expression3){
+            operationC
+        }else{
+            operationD
+        }
+
+        */
+        
+
+        //                                  string
+        // let result = parseInt(firstNumber) +symbol+ parseInt(secondNumber);
+
+        // document.getElementById("result").value = result;
+    }
+/*
+    function plus() {
+        let firstNumber = document.getElementById("firstNumber").value;
+        let secondNumber = document.getElementById("secondNumber").value;
+
+        let result = parseInt(firstNumber) + parseInt(secondNumber);
+
+        document.getElementById("result").value = result;
+    }
+
+    function minus() {
+        let firstNumber = document.getElementById("firstNumber").value;
+        let secondNumber = document.getElementById("secondNumber").value;
+
+        let result = parseInt(firstNumber) - parseInt(secondNumber);
+
+        document.getElementById("result").value = result;
+    }
+
+    function multiply() {
+        let firstNumber = document.getElementById("firstNumber").value;
+        let secondNumber = document.getElementById("secondNumber").value;
+
+        let result = parseInt(firstNumber) * parseInt(secondNumber);
+
+        document.getElementById("result").value = result;
+    }
+
+    function divide() {
+        let firstNumber = document.getElementById("firstNumber").value;
+        let secondNumber = document.getElementById("secondNumber").value;
+
+        let result = parseInt(firstNumber) /parseInt(secondNumber);
+
+        document.getElementById("result").value = result;
+    }
+    */
+</script>
+</body>
+</html>

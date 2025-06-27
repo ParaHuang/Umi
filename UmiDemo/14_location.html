@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="leave()">leave for the h1 page</button>
+    <button onclick="refresh()">reload the current page</button>
+    <button onclick="leaveAfter3()">go to h1 page after 3 second</button>
+    <br/>
+    <button>go</button>
+    <h1>go to the other page after <span id="time">5</span> seconds </h1>
+    <a href="15_history.html">go to 15</a>
+    <script>
+        function leave(){
+            /*window.*/location.href = "1.html";
+        }
+
+        function refresh(){
+            location.reload();
+        }
+
+        // function go1(){
+        //     location.href = "1.html"
+        // }
+
+        //
+        // part 1:let x, load up when the page is about to display
+        // part 2: function(){.....}, load up into memory when you call it the first time
+        let x = function(){
+
+        };
+
+        //load up into memory when the page is getting ready,it will slow down your page to display
+        function y(){
+
+        }
+
+        //y();
+
+        //if there is a method, you only use it 1 single time,1 single place, no need to give it a name
+        // let go1 = function(){
+        //     location.href = "1.html"
+        // }
+
+        function leaveAfter3(){
+            // setTimeout(go1,3000);
+            //anonymous function
+            setTimeout(function(){
+                location.href = "1.html"
+            },3000);
+        }
+    </script>
+</body>
+</html>

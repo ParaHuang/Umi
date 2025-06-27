@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //javascript : weak type language
+        //define a varible 
+        let x = 10;         //number
+        x = true;          //boolean, true/false
+        x = 3.14;
+        // x = "hello";
+        x = 'hello';
+
+
+        //print the result in console
+        console.log(typeof x);
+        
+        //operators
+        //math operator: + - * / % 
+        //retional operator:  >  >=   <   <=   ==   !=     (the result is true/false)
+        //logical operator: !(not)   && (and)   ||(or)
+        //assigment operator:  =   +=   -=   *=   /=    %=
+
+        //big priority:  unary > binary > tenary
+
+        //binary operator: 
+        //priority: math > retional > logical
+        let a = 10;
+        let b = 3;
+
+        console.log(10/3);
+        console.log(10%3);
+        
+        console.log(5>2);
+        console.log(5!=2);
+        
+        // &&:  and .   only when 2 expression are true, then the result is true
+        console.log(true && true);          //true
+        console.log(true && false);         //false
+        console.log(false && true);         //false
+        console.log(false && false);        //false
+        
+        
+        // ||:  and .   either expression is true,  the result is true
+        console.log(true || true);          //true
+        console.log(true || false);         //true
+        console.log(false || true);         //true
+        console.log(false || false);        //false
+
+        // !: not 
+        console.log(!true);                 //false
+        console.log(!false);                //true
+        
+        //            false      true        false                     
+        console.log(3*7>15+6 || 15%6==3 && 11*11>125-2);   //&& > ||
+
+        // x = 3*7>15+6 || 15%6==3 && 11*11>125-2;
+        
+        let c = 10;
+        c += 2; //c = c + 2;
+        c -= 5;
+        c *= 4;
+        c /= 5;
+
+        console.log(c);
+        
+    </script>
+</body>
+</html>

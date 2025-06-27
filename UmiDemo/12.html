@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #time{
+            font-size: 32px;
+            color: palevioletred;
+        }
+    </style>
+</head>
+<body>
+    <div id="time">2025-6-16 23:24:49</div>
+    <script>
+        let i = 1;
+        // setInterval      ->      Timer
+        function printHello(){
+            console.log("hello",i++);
+        }
+
+        //get time
+        let date = new Date();//creating an Date object
+
+        let year = date.getFullYear();
+        let month = date.getMonth()+1;
+        let d = date.getDate();
+
+        //hour
+        //minute
+        //second
+
+        document.getElementById("time").innerText = year+"-"+month+"-"+d;
+
+        // printHello();
+        // printHello();
+        // printHello();
+        // printHello();
+
+
+        setInterval(printHello,1000);
+
+    </script>
+</body>
+</html>

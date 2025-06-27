@@ -1,0 +1,89 @@
+#clock{
+    width: 300px;
+    height: 300px;
+    border: 10px dashed gray;
+    border-radius: 50%;
+    margin: auto;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+#dot{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: brown;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+#minute,#second{
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 150px;
+    transform-origin: left;
+}
+
+#minute{
+    width: 80px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: blueviolet;
+    transform: rotate(30deg);
+    animation: stick 20s linear infinite;
+}
+
+#second{
+    width: 120px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: aquamarine;
+    animation: stick 6s linear infinite;
+}
+
+@keyframes stick{
+    0%{transform: rotate(0deg);}
+    100%{transform: rotate(360deg);}
+}
+/* define */
+@keyframes bg {
+    0%{background: #FFBBBB;}
+    20%{background: #00ffff;}
+    40%{background: #ffff00;}
+    60%{background: #ff00ff;}
+    80%{background: #ff0000;}
+    100%{background: yellowgreen;}
+}
+
+body{
+    /* use */
+    animation: bg 10s linear infinite alternate;
+}
+/* 0%~100% */
+
+
+
+
+
+/*
+#d1{
+    display: inline-block;
+    background: palegoldenrod;
+}
+
+#d1::before{
+    content: '11111`';
+}
+
+#d1::after{
+    content: url('../img/header.jpg');
+}*/

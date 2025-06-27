@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body bgcolor="cyan">
+    <!-- html5 + css3 + javascript
+    structure + decoration + functional -->
+    <!-- event
+    <labelName  onEventName="callingMethod()">content</labelName> 
+    -->
+    <button onclick="alert(123)">click me then you'll a dialog with content "123"</button>
+    <button onclick="changeBg('green')">change background to green</button>
+    <button onclick="changeBg('red')">change background to red</button>
+    <button onclick="changeBg('pink')">change background to pink</button>
+    <button onclick="changeBg('yellow')">change background to yellow</button>
+   
+
+     <script>
+        // base on object
+        //document.write("hello world");      //write content in the page
+
+        //function: a code block with certain logic
+        //define a function
+        /*
+            function name(parameterList){
+                code block
+            }
+            parameterList:the data we need from the calling place to finish to code logic
+            variableName1,variableName2,variableName3
+        */
+        function changeBg(color){
+            document.bgColor = color;
+        }
+
+        //call a function
+        //1.calling in javascript code-- execute immediately
+        //functionName(values);
+        //changeBg('brown');
+
+        //2.call by a event
+
+     </script>
+</body>
+</html>

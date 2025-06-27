@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>welcome to register</h1>
+    <form action="16.html">
+        account:<input name="account" required pattern="[A-Z]\w{7,}"/> <span>account has to contain at least 8 normal characters,first one has to be capital</span><br/>
+        password:<input name="password" required type="password"/><br/>
+        birthday:<input name="birthday" type="date"/><br/>
+        gender:<input name="gender" type="radio" value="male"/>male
+        <input name="gender" type="radio" value="female"/>female
+        <br/>
+        city:<select name="city">
+            <option>ChangSha</option>
+            <option>Beijing</option>
+            <option>Shanghai</option>
+            <option>Tibet</option>
+        </select>
+        
+        <br/>
+        <button>submit</button>
+    </form>
+</body>
+</html>
