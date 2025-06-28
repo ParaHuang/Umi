@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            width: 500px;
+            margin: 20px auto;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="container">
+        <!-- <form action=""> -->
+            number:<input id="number"/><br/>
+            name:<input id="name"/><br/>
+            age:<input id="age"/><br/>
+            class:<input id="class"/><br/><br/>
+            <button onclick="add()">add</button>
+            <button>delete by number</button>
+            <button>update by number</button>
+            <button>search</button><br/>
+        <!-- </form> -->
+    </div>
+    <!-- 
+    tr:table row
+    th:table data 
+    -->
+    <table border="1" align="center" cellspacing="0" cellpadding="10" width="400">
+        <thead>
+            <tr>
+                <th>number</th>
+                <th>name</th>
+                <th>age</th>
+                <th>class</th>
+            </tr>
+        </thead>
+        <tbody id="stus">
+
+        </tbody>
+    </table>
+
+    <script src="js/20.js"></script>
+</body>
+</html>

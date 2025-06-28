@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="fruit" placeholder="enter the name"><br/>
+    <input id="color" placeholder="enter the color"><br/>
+    <button onclick="add()">add fruit</button>
+    <ul id="fruits">
+        <li>Peach</li>
+        <li>Apple</li>
+    </ul>
+    <script>
+        let add = function(){
+            let fruit = document.getElementById("fruit").value;
+            let color = document.getElementById("color").value;
+
+            //1.ceate a new element
+            let li = document.createElement("li");
+            //2.set up 
+            li.innerText = fruit;
+            li.style.color = color;
+            //3.add up
+            document.getElementById("fruits").appendChild(li);
+
+            console.log(li);
+            
+
+        }
+    </script>
+</body>
+</html>
