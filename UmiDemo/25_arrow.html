@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let fun1 = ()=>{
+            console.log('hello');
+        };
+        fun1();
+
+        let fun2 = (a,b)=>{
+            console.log(a,b);
+        }
+        fun2(10,20);
+
+        let fun3 = (a,b)=>console.log(a,b);
+        fun3(10,20);
+
+        let fun4 = (a,b)=>{
+            return a+b;
+        }
+
+        let result4 = fun4(10,20);
+        console.log(result4);
+
+        let fun5 = (a,b)=>a+b;
+        console.log(fun5(10,20));
+        
+        // setInterval(()=>{
+            
+        // },1000);
+    </script>
+</body>
+</html>

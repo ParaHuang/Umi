@@ -47,27 +47,52 @@ let addOneStudent = function(stu){
     tr.appendChild(tdnameStr);
     tr.appendChild(tdageStr);
     tr.appendChild(tdclsStr);
-    document.getElementById("stus").appendChild(tr);
+    stusNode.appendChild(tr);
 }
 
-let number = document.getElementById("number");
-let name = document.getElementById("name");
-let age = document.getElementById("age");
-let cls = document.getElementById("class");
+let numberNode = document.getElementById("number");
+let nameNode = document.getElementById("name");
+let ageNode = document.getElementById("age");
+let clsNode = document.getElementById("class");
+let stusNode = document.getElementById("stus");
 
 //for add buttom
 let add = function () {
-    let numberStr = number.value;
-    let nameStr = name.value;
-    let ageStr = age.value;
-    let clsStr = cls.value;
+    let number = numberNode.value;
+    let name = nameNode.value;
+    let age = ageNode.value;
+    let clsStr = clsNode.value;
     let student = {
-        number:numberStr,
-        name:nameStr,
-        age:ageStr,
+        number,name,age,
         class:clsStr
     }
     
     addOneStudent(student);
 };
+
+// parentNode.removeChild(childNode);
+let search = function(){
+    
+    //clean previous data
+    stusNode.innerHTML = "";
+    let number = numberNode.value;
+    //1.no number, search all
+    //2.with correct number, search only 1
+    //3.with incorrect number, search nothing
+    if(number==""){
+        for(let stu of arr){
+            addOneStudent(stu);
+        }
+        return; //stop the rest program
+    }
+
+    for(let stu of arr){
+        //===   full equals(value + type)
+        //==    value equals
+        if( /*number == "" ||*/  number == stu.number){
+            addOneStudent(stu);
+        }
+    }
+};
+
 
