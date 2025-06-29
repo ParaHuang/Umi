@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a = 12;
+        //array:(Java) several same type of data connected in memory space
+        //array:(JS) several data connected in memory space
+        let arr = [22,11,'hello',89,23];
+        // console.log(arr);
+        //access array element by arrayName[index]
+        //index: 0 ~ length-1
+        console.log(arr.length);
+        // console.log(arr[0]);
+        // console.log(arr[1]);
+        // console.log(arr[2]);
+        // console.log(arr[3]);
+        // console.log(arr[4]);
+        console.log("-----------");
+        /*
+        for(let i=0 ; i<arr.length ; i++){
+            console.log(i,arr[i]);          
+        }
+        */
+
+        //foreach, enhanced for loop
+        //get value out 1 by 1, save it in x
+        for(let x of arr){
+            console.log(x);
+        }
+        //array usually save some data with same meaning, or represent same type of information
+        console.log('class is',arr[3]);
+        
+
+    </script>
+</body>
+</html>

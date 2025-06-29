@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr = [];//array
+        //object    ->  json
+        /*
+        let obj = {
+            field1:value1,
+            field2:value2,
+            field3:value3
+        };
+        */
+       //obj.field1                 obj['field1']
+       let stu = {
+            class:'A8',
+            number:1,
+            name:'Jack',
+            age:17,
+            scores:[87,65,77,88,91]
+       };
+       console.log(stu);
+       console.log(stu.name , '----',stu['name']);
+       console.log(stu.scores[2]);
+
+       console.log('====================');
+       
+       //for...in...
+       for(let f in stu){
+            console.log(f,stu[f]);
+       }
+    </script>
+</body>
+</html>
