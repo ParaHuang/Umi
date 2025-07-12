@@ -68,9 +68,33 @@ let add = function () {
     }
     
     addOneStudent(student);
+    arr.push(student);
+    emptyBox();
 };
 
+let del = ()=>{
+    let number = numberNode.value;
 // parentNode.removeChild(childNode);
+    // let trs = stusNode.getElementsByTagName("tr");
+    // console.log(trs);
+    // let tr = document.querySelector("tr");//returns the 1st node
+    let trs = document.querySelectorAll("#stus tr");//returns all nodes
+    for(let i = 0 ; i<trs.length ; i++){
+        let tr = trs[i];
+        let td = tr.querySelector("td");
+        // console.log(td);
+        if(td.innerText == number){
+            stusNode.removeChild(tr);                   //remove row from tbody
+            arr.splice(i,1);    //remove 1 element from index i  , remove student from arr
+            emptyBox();
+            return; //stop the rest program
+        }
+    }
+
+    
+};
+
+
 let search = function(){
     
     //clean previous data
@@ -93,6 +117,14 @@ let search = function(){
             addOneStudent(stu);
         }
     }
+    emptyBox();
+};
+
+let emptyBox = ()=>{
+    numberNode.value = "";
+    nameNode.value = "";
+    ageNode.value = "";
+    clsNode.value = "";
 };
 
 

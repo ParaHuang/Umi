@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="can" width="600" height="600" style="border: 1px solid red;"></canvas>
+    <!-- vertify code -->
+     <script>
+        //1.find canvas
+        //document comment:be specific about the data type, it will supply better reminder for current file
+        /** @type {HTMLCanvasElement} */
+        let can = document.querySelector("#can");
+        //2.context of canvas
+        let ctx = can.getContext("2d");
+
+        //3.drawing
+        //3.1 rectangle
+        ctx.strokeRect(30,30,100,100);
+        ctx.fillRect(200,200,100,50);
+
+        //3.2 set up color
+        ctx.strokeStyle = "red";
+        ctx.fillStyle = "cyan";
+
+        //3.3 circle
+        ctx.arc(300,300,50,0,2*Math.PI);
+        ctx.fill();
+
+        ctx.beginPath();//restart the path
+        ctx.arc(300,300,30,0,Math.PI/2);
+        ctx.stroke();
+
+        //3.4 line
+        ctx.beginPath();
+        ctx.moveTo(600,600);   //set up the start poing
+        ctx.lineTo(500,500);
+        ctx.lineTo(600,400);
+        ctx.lineTo(500,300);
+        ctx.lineTo(600,200);
+        ctx.lineTo(500,100);
+        ctx.lineTo(600,0);
+        ctx.stroke();
+
+        //3.5 text
+        ctx.font = '40px Comic Sans MS';
+        ctx.fillText('hello',0,600);        //the point is left-bottom cornor
+     </script>
+</body>
+</html>

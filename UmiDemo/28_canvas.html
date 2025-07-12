@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body><br/><br/><br/><br/><br/><br/>
+      <img id="pic" src="img/header.jpg"/>  <br/>
+      <canvas id="can" width="400" height="400" style="border:1px solid red"></canvas>
+
+      <input id="txt" value="123"/>
+      <script>
+       
+        // document.getElementById("txt").value = "hello";
+
+
+        /** @type {HTMLCanvasElement} */
+        let can = document.querySelector("#can");
+        let ctx = can.getContext("2d"); 
+        let pic = document.getElementById("pic");
+
+        
+        //methods overloading
+        pic.onload = ()=>{
+            // console.log("hello");
+            //1.draw a image with its original size, at a certain position
+            //params 2,3:x,y
+            // ctx.drawImage(pic,0,0);
+
+            //2.draw a image at a certain position with a certain size
+            //ctx.drawImage(pic,0,0,400,400);
+
+            //3.pick a certain spot with a certian size of image,draw it  at a certain position with a certain size
+            // ctx.drawImage(pic,   20,15,90,90,    0,0,400,400 );
+        };
+        //onClick       ->  event of click
+        //onLoad        ->  event of (window,image) load up
+        //onMouseXxx    ->  enter,leave,hover,move,...
+        //onKeyXxx      ->  down,up,press
+        //onFoucus,onBlur->  focus or not
+
+        //in every event, there is an default param: event source, which contains all the details about that event moment
+        pic.onmousemove=(e)=>{
+            ctx.clearRect(0,0,400,400);
+            // console.log(e.x,e.y);
+            //console.log(e.offsetX,e.offsetY);
+            ctx.drawImage(pic,   e.offsetX-50,e.offsetY-50,100,100,    0,0,400,400 );
+        }
+
+        pic.onmouseleave=()=>{
+            ctx.clearRect(0,0,400,400);
+        }
+      </script>
+</body>
+</html>
