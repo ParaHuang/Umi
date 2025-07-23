@@ -1,7 +1,6 @@
 package day3_methods;
 
 import java.util.Random;
-import java.util.Scanner;
 
 public class Test1 {
     public static void main(String[] args) {
