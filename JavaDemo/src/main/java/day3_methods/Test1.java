@@ -1,6 +1,7 @@
 package day3_methods;
 
 import java.util.Random;
+import java.util.Scanner;
 
 public class Test1 {
     public static void main(String[] args) {
@@ -9,7 +10,7 @@ public class Test1 {
         printHello(3);   //3
         System.out.println();
         printHello(7);   //7
-
+        //----------------------------------test
         int x = giveNumberFrom1To100();
         System.out.println(x);
 
