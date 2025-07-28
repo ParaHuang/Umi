@@ -1,10 +1,14 @@
 package day3_methods;
 
+import day4_oop.Student;
+
 import java.util.Random;
 
 public class Test1 {
     public static void main(String[] args) {
-        print5Hello();
+        Test1 t = new Test1();
+        t.print5Hello();
+
         System.out.println();
         printHello(3);   //3
         System.out.println();
@@ -17,13 +21,19 @@ public class Test1 {
         System.out.println(y);
 //        Random random = new Random();
 //        int x = random.nextInt();
+
+        Student s =  new Student();
     }
 
+    //member method
     //no parameter,no return
-    public static void print5Hello(){
+    public void print5Hello(){
         for(int i=1 ; i<=5 ; i++){
             System.out.println("hello");
         }
+    }
+    public void randomMethod(){
+        print5Hello();
     }
 
     //with parameter, no return
