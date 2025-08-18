@@ -84,7 +84,6 @@ public class Student {
 
     //1.to return the String format of object information
     //2.print this object, this method will be called automatically/invisibly
-
     @Override
     public String toString() {
         return "Student{" +
