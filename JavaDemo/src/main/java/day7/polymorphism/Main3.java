@@ -6,10 +6,19 @@ public class Main3 {
         Nintendo n = new Nintendo();
         XBox x = new XBox();
 
+        DigitalCamera d = new DigitalCamera();
+        Polaroid p1 = new Polaroid();
+        GoPro g = new GoPro();
+
+
         YoungPeople youngPeople = new YoungPeople();
         youngPeople.haveFun(p);
         youngPeople.haveFun(n);
         youngPeople.haveFun(x);
+
+        youngPeople.goodMoments(d);
+        youngPeople.goodMoments(p1);
+        youngPeople.goodMoments(g);
     }
 }
 
@@ -21,7 +30,10 @@ class YoungPeople{
     }
 
 //  2.record good moments，if we want to record, we need camera, we use camera to take pictures.
-
+    public void goodMoments(Camera camera){
+        System.out.println("young people is having fun");
+        camera.takePicture();
+    }
 
 }
 
@@ -47,5 +59,31 @@ class XBox extends GameMachine{
     @Override
     public void playGame() {
         System.out.println("connect with TV,choose a game from game store, then play");
+    }
+}
+
+// B
+abstract class Camera{
+    public abstract void takePicture();
+}
+
+class Polaroid extends Camera{
+    @Override
+    public void takePicture() {
+        System.out.println("press the shutter, get an instant photo");
+    }
+}
+
+class GoPro extends Camera{
+    @Override
+    public void takePicture() {
+        System.out.println("diving into ocean,let's memorize this beautiful world");
+    }
+}
+
+class DigitalCamera extends Camera{
+    @Override
+    public void takePicture() {
+        System.out.println("press the shutter,get an digital picture");
     }
 }
