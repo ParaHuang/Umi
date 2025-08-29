@@ -10,6 +10,8 @@ public class Main3 {
         Polaroid p1 = new Polaroid();
         GoPro g = new GoPro();
 
+        Cellphone c = new Cellphone();
+        //Cellphone c1 = new Cellphone();
 
         YoungPeople youngPeople = new YoungPeople();
         youngPeople.haveFun(p);
@@ -19,6 +21,9 @@ public class Main3 {
         youngPeople.goodMoments(d);
         youngPeople.goodMoments(p1);
         youngPeople.goodMoments(g);
+
+        youngPeople.goodMoments(c);//haveFun(c);
+        //youngPeople.goodMoments(c1);
     }
 }
 
@@ -66,25 +71,25 @@ class XBox implements GameMachine{
 }
 
 // B
-abstract class Camera{
-    public abstract void takePicture();
+interface Camera{
+    void takePicture();
 }
 
-class Polaroid extends Camera{
+class Polaroid implements Camera{
     @Override
     public void takePicture() {
         System.out.println("press the shutter, get an instant photo");
     }
 }
 
-class GoPro extends Camera{
+class GoPro implements Camera{
     @Override
     public void takePicture() {
         System.out.println("diving into ocean,let's memorize this beautiful world");
     }
 }
 
-class DigitalCamera extends Camera{
+class DigitalCamera implements Camera{
     @Override
     public void takePicture() {
         System.out.println("press the shutter,get an digital picture");
@@ -92,9 +97,18 @@ class DigitalCamera extends Camera{
 }
 
 //alt+enter -> show solutions
-//class Cellphone extends GameMachine{
-//
-//}
+class Cellphone implements Camera, GameMachine{
+
+    @Override
+    public void takePicture() {
+        System.out.println("take my phone out, take a picture that I can watch it everyday");
+    }
+
+    @Override
+    public void playGame() {
+        System.out.println("take my phone out, login, play some online games with my teammates");
+    }
+}
 
 //single extends
 class A{}
