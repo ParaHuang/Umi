@@ -36,26 +36,29 @@ class YoungPeople{
     }
 
 }
-
-abstract class GameMachine{
-    public abstract void playGame();
+//1.if there are abstract methods in a class, then it's also an abstract class  (inside abstract class,there are abstract methods+normal methods)
+//2.if there are only abstract methods in an abstract class, then we can make it as an interface  (inside interface, there are only abstract methods)
+//3.all methods are abstract inside interface, so we don't need modifier
+//4.we can implements more than 1 interface
+interface GameMachine{
+    void playGame();
 }
 
-class PS5 extends GameMachine{
+class PS5 implements GameMachine{
     @Override
     public void playGame() {
         System.out.println("buy a game CD，connect with TV，there we go!");
     }
 }
 
-class Nintendo extends GameMachine{
+class Nintendo implements GameMachine{
     @Override
     public void playGame() {
         System.out.println("turn it on，choose a game，playing alone，so nice");
     }
 }
 
-class XBox extends GameMachine{
+class XBox implements GameMachine{
     @Override
     public void playGame() {
         System.out.println("connect with TV,choose a game from game store, then play");
@@ -87,3 +90,18 @@ class DigitalCamera extends Camera{
         System.out.println("press the shutter,get an digital picture");
     }
 }
+
+//alt+enter -> show solutions
+//class Cellphone extends GameMachine{
+//
+//}
+
+//single extends
+class A{}
+class B{}
+class C extends A{}
+//multiple implements
+interface D{}
+interface E{}
+class F implements D,E{}
+class G extends A implements D,E{}
