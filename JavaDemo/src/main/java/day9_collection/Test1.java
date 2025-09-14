@@ -6,10 +6,10 @@ import java.util.List;
 public class Test1 {
     public static void main(String[] args) {
         /*
-        Collection                              Map
+        Collection                                      Map
         |
-        |-------List
-        |-------Set
+        |-------List--ArrayList
+        |-------Set--HashSet,LinkedHashSet,TreeSet
          */
 
 
