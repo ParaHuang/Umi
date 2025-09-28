@@ -1,6 +1,9 @@
 package day12_thread;
 
 import javax.swing.*;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
 public class Game extends JFrame {
     public static void main(String[] args) {
@@ -44,10 +47,44 @@ public class Game extends JFrame {
                         throw new RuntimeException(e);
                     }
                 }
-                
             }
         };
         t1.start();
+
+        btn.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e) {
+                if (e.getKeyCode() == 32) {
+                    Thread dinoThread = new Thread() {
+                        @Override
+                        public void run() {
+                            //go up
+
+                            try {
+                                for (int i = 0; i < 10; i++) {
+                                    int y = btn.getY();
+                                    y -= 20;
+                                    btn.setLocation(btn.getX(), y);
+                                    Thread.sleep(30);
+                                }
+
+                                //go down
+                                for (int i = 0; i < 10; i++) {
+                                    int y = btn.getY();
+                                    y += 20;
+                                    btn.setLocation(btn.getX(), y);
+                                    Thread.sleep(30);
+                                }
+                            } catch (InterruptedException ex) {
+                                throw new RuntimeException(ex);
+                            }
+
+                        }
+                    };
+                    dinoThread.start();
+                }
+            }
+        });
 
     }
 }
