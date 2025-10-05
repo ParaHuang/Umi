@@ -11,6 +11,8 @@ public class Game extends JFrame {
         game.setVisible(true);
     }
 
+    private JButton dino,bush;
+
     public Game() {
         setSize(800, 600);
         setTitle("Dinosaur");
@@ -24,23 +26,26 @@ public class Game extends JFrame {
         contentPane.setLayout(null);
 
         //create other components
-        JButton btn = new JButton("dinosaur");
-        btn.setBounds(40, 400, 80, 80);
-        contentPane.add(btn);
+        dino = new JButton("dinosaur");
+        dino.setBounds(40, 400, 80, 80);
+        contentPane.add(dino);
 
-        JButton bush = new JButton("bush");
+        bush = new JButton("bush");
         bush.setBounds(700, 400, 80, 80);
         contentPane.add(bush);
 
         Thread t1 = new Thread() {
             public void run() {
-                while (true) {
+                while (true && !isColliding()) {
                     int x = bush.getX();
                     x -= 10;
                     if (x < -bush.getWidth()) {
                         x = 800;
                     }
                     bush.setLocation(x, bush.getY());
+                    if(isColliding()){
+                        System.out.println("colliding");
+                    }
                     try {
                         Thread.sleep(50);
                     } catch (InterruptedException e) {
@@ -51,29 +56,29 @@ public class Game extends JFrame {
         };
         t1.start();
 
-        btn.addKeyListener(new KeyAdapter() {
+        dino.addKeyListener(new KeyAdapter() {
             @Override
             public void keyPressed(KeyEvent e) {
-                if (e.getKeyCode() == 32) {
+                if (e.getKeyCode() == 32 && dino.getY() == 400) {
                     Thread dinoThread = new Thread() {
                         @Override
                         public void run() {
                             //go up
 
                             try {
-                                for (int i = 0; i < 10; i++) {
-                                    int y = btn.getY();
+                                for (int i = 0; i < 10 && !isColliding(); i++) {
+                                    int y = dino.getY();
                                     y -= 20;
-                                    btn.setLocation(btn.getX(), y);
-                                    Thread.sleep(30);
+                                    dino.setLocation(dino.getX(), y);
+                                    Thread.sleep(70);
                                 }
 
                                 //go down
-                                for (int i = 0; i < 10; i++) {
-                                    int y = btn.getY();
+                                for (int i = 0; i < 10 && !isColliding(); i++) {
+                                    int y = dino.getY();
                                     y += 20;
-                                    btn.setLocation(btn.getX(), y);
-                                    Thread.sleep(30);
+                                    dino.setLocation(dino.getX(), y);
+                                    Thread.sleep(70);
                                 }
                             } catch (InterruptedException ex) {
                                 throw new RuntimeException(ex);
@@ -86,5 +91,21 @@ public class Game extends JFrame {
             }
         });
 
+    }
+
+    public boolean isColliding(){
+        int bx = bush.getX();
+        int bw = bush.getWidth();
+        int by = bush.getY();
+
+        int dx = dino.getX();
+        int dw = dino.getWidth();
+        int dy = dino.getY();
+        int dh = dino.getHeight();
+
+        if(bx<=dx+dw && bx+bw>=dx && by<=dy+dh){
+            return true;
+        }
+        return false;
     }
 }
