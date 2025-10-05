@@ -34,6 +34,8 @@ public class Game extends JFrame {
         bush.setBounds(700, 400, 80, 80);
         contentPane.add(bush);
 
+        
+
         Thread t1 = new Thread() {
             public void run() {
                 while (true && !isColliding()) {

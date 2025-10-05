@@ -10,13 +10,14 @@ public class Main1 {
 
 
         //1. get/create the object of a certain file
-        File file = new File("/Users/parahuang/Downloads/happyFolder");
+        File file = new File("C:\\Users\\Ümit\\Desktop\\git_jetbrains\\intellij\\Umi\\JavaDemo\\src\\main\\java\\day13_file\\folder");
 //        File newFile = new File("/Users/parahuang/Downloads/happyFolderWithNewName");
 
         //2. get name,path,parent
         System.out.println(file.getName());
         System.out.println(file.getPath());
         System.out.println(file.getParent());
+
 
         //3. delete
         //file.delete();
@@ -35,7 +36,22 @@ public class Main1 {
         //6. get all sub files inside a folder
         File[] fs = file.listFiles();
         for (File f:fs){
-            System.out.println(f.getName()+"--"+f.isFile());
+            //System.out.println(f.getName()+"--"+f.isFile());
+            if (f.isFile() && f.getName().endsWith(".txt")){
+                System.out.println(f.getName());
+            } else if (f.isDirectory()){
+                File[] folders = f.listFiles();
+                for (File f1:folders){
+                    if (f1.isFile() && f1.getName().endsWith(".txt")){
+                        System.out.println(f1.getName());
+                    } else if (f1.isDirectory()){
+                        File[] folders = f.listFiles();
+                        for (File f1:folders){
+                            if (f1.isFile() && f1.getName().endsWith(".txt")){
+                                System.out.println(f1.getName());
+                    }
+                }
+            }
         }
     }
 }
