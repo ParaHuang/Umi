@@ -5,6 +5,7 @@ public class Student {
     private String name;//instance variable
     private int age;
     private String gender;
+    private static String teacherName;
 
     //constructor:a special method
     //1.has no concept of return, in the same name as class
