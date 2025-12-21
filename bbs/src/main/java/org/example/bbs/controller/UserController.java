@@ -1,5 +1,6 @@
 package org.example.bbs.controller;
 
+import org.example.bbs.pojo.Users;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -7,13 +8,14 @@ import org.springframework.web.bind.annotation.*;
 public class UserController {
 
     @PostMapping("/signUp")
-    public String signUp(){//insert
+    public String signUp(Users user){//insert
         System.out.println("a user just singed up");
+        System.out.println(user);
         return "sign up successfully";
     }
     @PostMapping("/signIn")
-    public String signIn(String account,String password){//insert
-        System.out.println("a user just singed in--"+account+","+password);
+    public String signIn(Users user){//insert
+        System.out.println("a user just singed in--"+user.getUsername()+","+user.getUsername());
         return "login successfully";
     }
 
@@ -21,6 +23,13 @@ public class UserController {
     public String changePassword(){
         System.out.println("a user is changing password");
         return "update successfully";
+    }
+
+//    path variable
+    @DeleteMapping("/{username}")
+    public String deactivate(@PathVariable String username){
+        System.out.println("a user ["+username+"] just deactivated");
+        return "deactivate successfully";
     }
 
     /*
