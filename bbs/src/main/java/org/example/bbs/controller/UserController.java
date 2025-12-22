@@ -1,20 +1,26 @@
 package org.example.bbs.controller;
 
-import org.example.bbs.pojo.Users;
+import org.example.bbs.pojo.User;
+import org.example.bbs.repo.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/user")
 public class UserController {
+    @Autowired
+    UserRepository userRepository;
+
 
     @PostMapping("/signUp")
-    public String signUp(Users user){//insert
+    public String signUp(User user){//insert
         System.out.println("a user just singed up");
         System.out.println(user);
+        userRepository.save(user);
         return "sign up successfully";
     }
     @PostMapping("/signIn")
-    public String signIn(Users user){//insert
+    public String signIn(User user){//insert
         System.out.println("a user just singed in--"+user.getUsername()+","+user.getUsername());
         return "login successfully";
     }

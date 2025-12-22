@@ -1,14 +1,28 @@
 package org.example.bbs.pojo;
 
-public class Users {
-    private String username;
+import jakarta.persistence.*;
+
+@Entity
+@Table(name="users")
+public class User {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    @Column(nullable = false,length = 50)
+    private String username;        //varchar(50)
+    @Column(nullable = false,length = 50)
     private String password;
     private String nickname;
     private String profile;
     private String phone;
     private String email;
 
-    public Users(String username, String password, String nickname, String profile, String phone, String email) {
+    public User() {
+    }
+
+    public User(Long id, String username, String password, String nickname, String profile, String phone, String email) {
+        this.id = id;
         this.username = username;
         this.password = password;
         this.nickname = nickname;
@@ -17,13 +31,11 @@ public class Users {
         this.email = email;
     }
 
-    public Users() {
-    }
-
     @Override
     public String toString() {
-        return "Users{" +
-                "username='" + username + '\'' +
+        return "User{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 ", nickname='" + nickname + '\'' +
                 ", profile='" + profile + '\'' +
@@ -78,5 +90,13 @@ public class Users {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getId() {
+        return id;
     }
 }
